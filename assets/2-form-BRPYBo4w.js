@@ -1,0 +1,2 @@
+const a={email:"",message:""},e=document.querySelector(".feedback-form"),t=e.elements.email,l=e.elements.message;e.addEventListener("submit",()=>{t.value===""||l.value===""?alert("Fill please all fields"):(a.email=t.value.trim(),a.message=l.value.trim(),localStorage.setItem("feedback-form-state",JSON.stringify(a)),e.reset())});window.addEventListener("DOMContentLoaded",()=>{const s=localStorage.getItem("feedback-form-state"),o=JSON.parse(s);console.log(o),e.reset(),localStorage.clear()});
+//# sourceMappingURL=2-form-BRPYBo4w.js.map
