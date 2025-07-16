@@ -1,0 +1,2 @@
+const t={email:"",message:""},a=document.querySelector(".feedback-form"),l=a.elements.email,s=a.elements.message;a.addEventListener("submit",n);function n(e){if(l.value===""||s.value===""){e.preventDefault(),alert("Fill please all fields");return}else t.email=l.value.trim(),t.message=s.value.trim(),localStorage.setItem("feedback-form-state",JSON.stringify(t))}window.addEventListener("DOMContentLoaded",()=>{const e=localStorage.getItem("feedback-form-state"),o=JSON.parse(e);console.log(o)});
+//# sourceMappingURL=2-form-DTfflZsh.js.map
