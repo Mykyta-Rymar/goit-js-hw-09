@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     item.className = 'gallery-img';
     item.src = image.preview;
     item.alt = image.description;
-    item.dataset.source = image.original;
+    // item.dataset.source = image.original;
 
     par.className = 'gallery-link';
     par.href = image.original;
