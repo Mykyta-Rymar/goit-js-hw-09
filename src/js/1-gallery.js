@@ -67,31 +67,35 @@ const images = [
   },
 ];
 
-const listEl = document.querySelector('.gallery');
-const listItems = [];
+document.addEventListener('DOMContentLoaded', () => {
+  const listEl = document.querySelector('.gallery');
+  if (!listEl) return;
 
-images.forEach(image => {
-  const li = document.createElement('li');
-  const par = document.createElement('a');
-  const item = document.createElement('img');
+  const listItems = [];
 
-  item.className = 'gallery-img';
-  item.src = image.preview;
-  item.alt = image.description;
-  item.dataset.source = image.original;
+  images.forEach(image => {
+    const li = document.createElement('li');
+    const par = document.createElement('a');
+    const item = document.createElement('img');
 
-  par.className = 'gallery-link';
-  par.href = image.original;
+    item.className = 'gallery-img';
+    item.src = image.preview;
+    item.alt = image.description;
+    item.dataset.source = image.original;
 
-  li.classList.add('gallery-item');
-  li.append(par);
-  par.append(item);
-  listItems.push(li);
-});
+    par.className = 'gallery-link';
+    par.href = image.original;
 
-listEl.append(...listItems);
+    li.classList.add('gallery-item');
+    li.append(par);
+    par.append(item);
+    listItems.push(li);
+  });
 
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
+  listEl.append(...listItems);
+
+  const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
 });
